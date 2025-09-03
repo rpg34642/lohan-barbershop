@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lohan Barbershop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Lohan Barbershop</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#agendamento">Agendar</a>
+      <a href="#contato">Contato</a>
+      <a href="#login">Login</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Bem-vindo à Lohan Barbershop</h1>
+      <p>O melhor corte e barba da cidade!</p>
+      <a href="#agendamento" class="btn">Agende Agora</a>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="servicos-container">
+      <div class="servico-card">
+        <img src="https://images.pexels.com/photos/935949/pexels-photo-935949.jpeg" alt="Corte">
+        <h3>Corte</h3>
+        <p>Preço: R$35,00</p>
+      </div>
+      <div class="servico-card">
+        <img src="https://images.pexels.com/photos/3991616/pexels-photo-3991616.jpeg" alt="Corte e Barba">
+        <h3>Corte + Barba</h3>
+        <p>Preço: R$45,00</p>
+      </div>
+      <div class="servico-card">
+        <img src="https://images.pexels.com/photos/3775139/pexels-photo-3775139.jpeg" alt="Barba">
+        <h3>Barba</h3>
+        <p>Preço: R$25,00</p>
+      </div>
+      <div class="servico-card">
+        <img src="https://images.pexels.com/photos/3761070/pexels-photo-3761070.jpeg" alt="Luzes">
+        <h3>Luzes</h3>
+        <p>Preço: R$50,00</p>
+      </div>
+      <div class="servico-card">
+        <img src="https://images.pexels.com/photos/3991620/pexels-photo-3991620.jpeg" alt="Nevou">
+        <h3>Nevou</h3>
+        <p>Preço: R$60,00</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendamento">
+    <h2>Agendamento</h2>
+    <form id="agendarForm">
+      <label for="servicoSelect">Escolha o serviço:</label>
+      <select id="servicoSelect" required>
+        <option value="Corte">Corte</option>
+        <option value="Corte + Barba">Corte + Barba</option>
+        <option value="Barba">Barba</option>
+        <option value="Luzes">Luzes</option>
+        <option value="Nevou">Nevou</option>
+      </select>
+
+      <label for="barbeiroSelect">Escolha o barbeiro:</label>
+      <select id="barbeiroSelect" required>
+        <option value="Lohan">Lohan</option>
+        <option value="Rafael">Rafael</option>
+        <option value="Lucas">Lucas</option>
+      </select>
+
+      <label for="data">Data:</label>
+      <input type="date" id="data" required>
+
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" required>
+
+      <label for="avaliacao">Avaliar barbeiro (1-5):</label>
+      <input type="number" id="avaliacao" min="1" max="5" placeholder="1 a 5" required>
+
+      <label for="pixKey">Chave PIX:</label>
+      <input type="text" id="pixKey" placeholder="Ex: 12345678900" required>
+
+      <button type="submit">Agendar e Gerar PIX</button>
+    </form>
+
+    <div id="pixArea">
+      <h3>Pagamento PIX</h3>
+      <canvas id="pixQRCode"></canvas>
+      <p id="pixKeyDisplay"></p>
+    </div>
+
+    <h3>Agendamentos Salvos</h3>
+    <ul id="agendamentosList"></ul>
+
+    <p id="agendamentoMsg"></p>
+  </section>
+
+  <section id="login">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" placeholder="Usuário" id="usuario" required>
+      <input type="password" placeholder="Senha" id="senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <p id="loginMsg"></p>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Email: contato@lohanbarbershop.com</p>
+    <p>Telefone: (12) 99767-6651</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Lohan Barbershop</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
